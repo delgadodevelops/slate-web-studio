@@ -6,182 +6,190 @@ import {
   FaTools,
 } from 'react-icons/fa';
 
-const services = [
-  {
-    title: 'Custom Web Design',
-    description:
-      'We build blazing-fast, responsive websites tailored to your brand and optimized to convert visitors into clients.',
-    icon: <FaLaptopCode className="text-3xl text-primary" />,
-    image: 'https://picsum.photos/600/400?random=1',
-  },
-  {
-    title: 'SEO Optimization',
-    description:
-      'Get found on Google with optimized content, technical SEO, and local strategies to drive real results.',
-    icon: <FaSearch className="text-3xl text-primary" />,
-    image: 'https://picsum.photos/600/400?random=2',
-  },
-  {
-    title: 'Logo & Branding',
-    description:
-      'From logo design to brand guides — we help you establish a consistent, pro-level identity across platforms.',
-    icon: <FaPaintBrush className="text-3xl text-primary" />,
-    image: 'https://picsum.photos/600/400?random=3',
-  },
-  {
-    title: 'Site Maintenance',
-    description:
-      'Ongoing support, content updates, and performance monitoring — so your website never misses a beat.',
-    icon: <FaTools className="text-3xl text-primary" />,
-    image: 'https://picsum.photos/600/400?random=4',
-  },
-];
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1 },
+  }),
+};
 
-const pricing = [
+const webDesignTiers = [
   {
     title: 'Starter',
     price: '$799+',
-    features: [
-      '1-page website',
-      'Mobile responsive',
-      'Contact form',
-      'Launch-ready in 1 week',
-    ],
+    features: ['1-page site', 'Mobile responsive', 'Contact form', 'Launch in 1 week'],
   },
   {
     title: 'Professional',
     price: '$1499+',
-    features: [
-      'Multi-page site',
-      'Basic SEO setup',
-      'Custom design',
-      'Logo included',
-    ],
+    features: ['Multi-page site', 'Custom design', 'SEO basics', 'Logo included'],
     highlight: true,
+    mostPopular: true,
   },
   {
     title: 'Premium',
     price: '$2499+',
+    features: ['Full custom site', 'Advanced SEO', 'Branding kit', 'Maintenance plan'],
+  },
+];
+
+const seoTiers = [
+  {
+    title: 'SEO Starter Pack',
+    price: '$450 (one-time)',
     features: [
-      'Full custom design',
-      'Advanced SEO',
-      'Branding kit',
-      'Maintenance plan',
+      'Full site audit',
+      'On-page optimization',
+      'Keyword setup & tracking',
+      'Search console + sitemap setup',
+    ],
+  },
+  {
+    title: 'Monthly Growth',
+    price: '$600/mo',
+    features: [
+      'Ongoing keyword tracking',
+      'Monthly content optimization',
+      'Backlink strategy & outreach',
+      'Performance reporting',
+    ],
+    highlight: true,
+    mostPopular: true,
+  },
+  {
+    title: 'Local SEO Boost',
+    price: '$350/mo',
+    features: [
+      'Local keyword targeting',
+      'Google Business optimization',
+      'Review strategy',
+      'Citations & local directories',
     ],
   },
 ];
 
-export default function Services() {
+const brandingOptions = [
+  {
+    title: 'Logo Design',
+    price: '$500',
+    features: ['3 concepts', '2 revisions', 'Final files included'],
+  },
+  {
+    title: 'Brand Kit',
+    price: '$950',
+    features: ['Logo + Colors + Fonts', 'Style guide', 'Social graphics'],
+    mostPopular: true,
+  },
+];
+
+const maintenanceTiers = [
+  {
+    title: 'Essential',
+    price: '$99/mo',
+    features: ['Security updates', 'Monthly backups', 'Basic edits'],
+  },
+  {
+    title: 'Pro',
+    price: '$199/mo',
+    features: ['All Essential', 'Priority edits', 'Content updates'],
+    mostPopular: true,
+  },
+];
+
+function PricingSection({ title, description, plans }) {
   return (
-    <section className="relative overflow-hidden py-24 px-6 max-w-6xl mx-auto text-center z-10">
-      {/* Background blobs */}
-      <div className="absolute -top-20 left-0 w-[500px] h-[500px] bg-blue-100 dark:bg-blue-800 opacity-20 rounded-full blur-3xl z-0" />
-      <div className="absolute bottom-[-100px] right-0 w-[400px] h-[400px] bg-purple-100 dark:bg-purple-800 opacity-20 rounded-full blur-3xl z-0" />
-
-      {/* Header */}
-      <motion.h1
-        className="text-4xl font-bold mb-6 relative z-10"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        What We Offer
-      </motion.h1>
-
-      <motion.p
-        className="text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-12 relative z-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2 }}
-      >
-        From stunning visuals to powerful SEO, Slate delivers results that grow your brand online.
-      </motion.p>
-
-      {/* Services */}
-      <div className="relative z-10 grid gap-10 md:grid-cols-2 mb-24">
-        {services.map((service, index) => (
-          <motion.div
-            key={service.title}
-            className="bg-white dark:bg-slate-800 shadow-xl rounded-xl overflow-hidden text-left border border-gray-100 dark:border-slate-700 hover:shadow-2xl transition duration-300"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.15 }}
-          >
-            <img
-              src={service.image}
-              alt={service.title}
-              className="h-48 w-full object-cover"
-            />
-            <div className="p-6">
-              <div className="mb-3">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-primary mb-2">
-                {service.title}
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300">
-                {service.description}
-              </p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Pricing */}
+    <div className="mb-24 text-center">
       <motion.h2
-        className="text-3xl font-bold mb-10 relative z-10"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        className="text-3xl font-bold mb-4"
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true }}
+        variants={fadeUp}
       >
-        Pricing Plans
+        {title}
       </motion.h2>
-
-      <div className="relative z-10 grid md:grid-cols-3 gap-8 mb-24">
-        {pricing.map((tier, index) => (
+      {description && (
+        <motion.p
+          className="text-gray-600 max-w-xl mx-auto mb-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+        >
+          {description}
+        </motion.p>
+      )}
+      <div
+        className={`grid gap-8 ${
+          plans.length === 2
+            ? 'md:grid-cols-2 justify-center'
+            : 'md:grid-cols-3'
+        }`}
+      >
+        {plans.map((plan, i) => (
           <motion.div
-            key={tier.title}
-            className={`border p-6 rounded-xl shadow-lg transform transition duration-300 hover:-translate-y-1 hover:shadow-2xl ${
-              tier.highlight
+            key={plan.title}
+            className={`relative border p-6 rounded-xl shadow-md hover:shadow-xl transition ${
+              plan.highlight
                 ? 'border-primary bg-primary/5 dark:bg-primary/10'
                 : 'border-gray-200 dark:border-slate-700'
             }`}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.2 }}
+            custom={i}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
+            variants={fadeUp}
           >
-            <h3 className="text-xl font-bold text-primary mb-2">{tier.title}</h3>
-            <p className="text-3xl font-extrabold text-gray-900 dark:text-white mb-4">
-              {tier.price}
-            </p>
-            <ul className="text-gray-600 dark:text-gray-300 space-y-2 text-sm">
-              {tier.features.map((feature, i) => (
-                <li key={i}>✅ {feature}</li>
+            {plan.mostPopular && (
+              <span className="absolute -top-3 -right-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full shadow z-10">
+                Most Popular
+              </span>
+            )}
+            <h3 className="text-xl font-bold text-primary mb-2">{plan.title}</h3>
+            <p className="text-3xl font-extrabold text-gray-900 dark:text-white mb-4">{plan.price}</p>
+            <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-2 mb-4">
+              {plan.features.map((f, idx) => (
+                <li key={idx}>✅ {f}</li>
               ))}
             </ul>
+            <a
+              href="/contact"
+              className="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-hover transition"
+            >
+              Get Started
+            </a>
           </motion.div>
         ))}
       </div>
+    </div>
+  );
+}
 
-      {/* CTA */}
-      <motion.div
-        className="relative z-10 max-w-xl mx-auto"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        <h3 className="text-xl font-bold mb-3">Need something custom?</h3>
-        <p className="text-gray-600 dark:text-gray-400 mb-6">
-          We tailor every project to your brand, goals, and budget. Let’s chat about building something great.
-        </p>
-        <a
-          href="/contact"
-          className="inline-block bg-primary text-white px-6 py-3 rounded-full font-medium hover:bg-primary-hover transition"
-        >
-          Start Your Project 🚀
-        </a>
-      </motion.div>
+export default function Services() {
+  return (
+    <section className="py-24 px-6 max-w-6xl mx-auto">
+      <PricingSection
+        title="Web Design Packages"
+        description="Clean, modern, responsive websites tailored to your business goals."
+        plans={webDesignTiers}
+      />
+      <PricingSection
+        title="SEO Plans"
+        description="Whether you're just getting started or ready to scale, these SEO options help your business get found and grow organically."
+        plans={seoTiers}
+      />
+      <PricingSection
+        title="Branding & Logo Design"
+        description="Make your brand memorable with a bold, professional visual identity."
+        plans={brandingOptions}
+      />
+      <PricingSection
+        title="Website Maintenance"
+        description="We’ll take care of the technical stuff — you focus on running your business."
+        plans={maintenanceTiers}
+      />
     </section>
   );
 }
