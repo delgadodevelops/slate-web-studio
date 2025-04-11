@@ -1,13 +1,18 @@
-import heroMockup from '../assets/mockup-laptop.jpg'; // Replace with your mockup
+import { motion } from 'framer-motion';
+import heroMockup from '../assets/mockup-laptop.jpg';
 
-function Hero() {
+function Hero({ startAnimation }) {
   return (
-    <section className="bg-white dark:bg-slate-900 py-24 px-6">
+    <section className="bg-white dark:bg-slate-900 py-24 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         
         {/* Left: Text Content */}
-        <div className="text-center md:text-left">
-
+        <motion.div
+          className="text-center md:text-left"
+          initial={startAnimation ? { opacity: 0, y: 30 } : false}
+          animate={startAnimation ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1, ease: 'easeOut' }}
+        >
           <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-slate-200 sm:text-5xl md:text-6xl">
             <span className="block mb-1">Custom Websites</span>
             <span className="block bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
@@ -16,8 +21,8 @@ function Hero() {
             <div className="mt-2 text-lg sm:text-xl text-primary font-medium">
               SEO-Optimized. Lightning Fast. Built to Scale.
             </div>
-            
           </h1>
+
           <p className="uppercase tracking-widest text-sm text-primary font-semibold my-3">
             Florida-Based Web Studio
           </p>
@@ -40,16 +45,21 @@ function Hero() {
               Let’s Build Your Website 🚀
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Right: Device Mockup */}
-        <div className="flex justify-center md:justify-end">
+        {/* Right: Device Mockup - Desktop Only */}
+        <motion.div
+          className="hidden md:flex justify-end"
+          initial={startAnimation ? { opacity: 0, scale: 0.9 } : false}
+          animate={startAnimation ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 1.2, ease: 'easeOut', delay: 0.2 }}
+        >
           <img
             src={heroMockup}
             alt="Website preview"
-            className="max-w-[600px] w-full rounded-xl "
+            className="max-w-[600px] w-full rounded-xl"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

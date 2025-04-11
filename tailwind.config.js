@@ -20,6 +20,9 @@ export default {
       animation: {
         'fade-down': 'fade-down 0.6s ease-out',
       },
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+      },
     },
   },
   plugins: [],

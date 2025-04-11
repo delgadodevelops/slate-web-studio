@@ -15,6 +15,33 @@ const fadeUp = {
   }),
 };
 
+const serviceOverview = [
+  {
+    icon: <FaLaptopCode size={32} className="text-primary" />,
+    title: 'Web Design',
+    description:
+      'Clean, responsive, SEO-ready websites tailored to your brand and goals.',
+  },
+  {
+    icon: <FaSearch size={32} className="text-primary" />,
+    title: 'SEO Optimization',
+    description:
+      'Get found online with on-page, technical, and local SEO strategies.',
+  },
+  {
+    icon: <FaPaintBrush size={32} className="text-primary" />,
+    title: 'Branding & Logo Design',
+    description:
+      'Build a bold, recognizable identity with custom branding & logo kits.',
+  },
+  {
+    icon: <FaTools size={32} className="text-primary" />,
+    title: 'Website Maintenance',
+    description:
+      'Ongoing support, updates, backups, and performance optimization.',
+  },
+];
+
 const webDesignTiers = [
   {
     title: 'Starter',
@@ -102,7 +129,7 @@ function PricingSection({ title, description, plans }) {
   return (
     <div className="mb-24 text-center">
       <motion.h2
-        className="text-3xl font-bold mb-4"
+        className="text-3xl font-bold mb-4 font-outfit"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -112,7 +139,7 @@ function PricingSection({ title, description, plans }) {
       </motion.h2>
       {description && (
         <motion.p
-          className="text-gray-600 max-w-xl mx-auto mb-10"
+          className="text-gray-600 dark:text-slate-400 max-w-xl mx-auto mb-10 font-outfit text-base"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -170,6 +197,49 @@ function PricingSection({ title, description, plans }) {
 export default function Services() {
   return (
     <section className="py-24 px-6 max-w-6xl mx-auto">
+      <motion.h2
+        className="text-center text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-4 font-outfit"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        Our <span className="text-primary">Services</span>
+      </motion.h2>
+
+      <motion.p
+        className="text-center text-gray-600 dark:text-slate-400 max-w-2xl mx-auto mb-20 font-outfit text-base"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true }}
+      >
+        Everything you need to build, grow, and maintain your online presence — all in one place.
+      </motion.p>
+
+      {/* Overview Cards with Blue Background */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12 mb-24">
+        {serviceOverview.map((service, idx) => (
+          <motion.div
+            key={service.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: idx * 0.1 }}
+            viewport={{ once: true }}
+            className="p-6 rounded-xl border border-blue-100 dark:border-blue-900 bg-blue-50 dark:bg-blue-900/20 shadow-sm hover:shadow-md transition"
+          >
+            <div className="mb-4">{service.icon}</div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 font-outfit">
+              {service.title}
+            </h3>
+            <p className="text-sm text-gray-600 dark:text-slate-300 font-outfit">
+              {service.description}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Pricing Sections */}
       <PricingSection
         title="Web Design Packages"
         description="Clean, modern, responsive websites tailored to your business goals."
