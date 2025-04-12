@@ -28,7 +28,7 @@ export default function Footer() {
 
         {/* Social Icons */}
         <div className="flex justify-center gap-6 text-xl text-gray-500  mb-6">
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-primary transition">
+          <a href="https://instagram.com/slatewebstudio" target="_blank" rel="noreferrer" className="hover:text-primary transition">
             <FaInstagram />
           </a>
           <a href="mailto:info@slatewebstudio.com" className="hover:text-primary transition">

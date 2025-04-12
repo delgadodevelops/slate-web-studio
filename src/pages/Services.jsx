@@ -1,11 +1,6 @@
-import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
-import {
-  FaLaptopCode,
-  FaSearch,
-  FaPaintBrush,
-  FaTools,
-} from 'react-icons/fa';
+import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
+import { FaLaptopCode, FaSearch, FaPaintBrush, FaTools } from "react-icons/fa";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -19,105 +14,124 @@ const fadeUp = {
 const serviceOverview = [
   {
     icon: <FaLaptopCode size={32} className="text-primary" />,
-    title: 'Web Design',
-    description: 'Clean, responsive, SEO-ready websites tailored to your brand and goals.',
+    title: "Web Design",
+    description:
+      "Clean, responsive, SEO-ready websites tailored to your brand and goals.",
   },
   {
     icon: <FaSearch size={32} className="text-primary" />,
-    title: 'SEO Optimization',
-    description: 'Get found online with on-page, technical, and local SEO strategies.',
+    title: "SEO Optimization",
+    description:
+      "Get found online with on-page, technical, and local SEO strategies.",
   },
   {
     icon: <FaPaintBrush size={32} className="text-primary" />,
-    title: 'Branding & Logo Design',
-    description: 'Build a bold, recognizable identity with custom branding & logo kits.',
+    title: "Branding & Logo Design",
+    description:
+      "Build a bold, recognizable identity with custom branding & logo kits.",
   },
   {
     icon: <FaTools size={32} className="text-primary" />,
-    title: 'Website Maintenance',
-    description: 'Ongoing support, updates, backups, and performance optimization.',
+    title: "Website Maintenance",
+    description:
+      "Ongoing support, updates, backups, and performance optimization.",
   },
 ];
 
 const webDesignTiers = [
   {
-    title: 'Starter',
-    price: '$799+',
-    features: ['1-page site', 'Mobile responsive', 'Contact form', 'Launch in 1 week'],
+    title: "Starter",
+    price: "$799+",
+    features: [
+      "1-page site",
+      "Mobile responsive",
+      "Contact form",
+      "Launch in 1 week",
+    ],
   },
   {
-    title: 'Professional',
-    price: '$1499+',
-    features: ['Multi-page site', 'Custom design', 'SEO basics', 'Logo included'],
+    title: "Professional",
+    price: "$1499+",
+    features: [
+      "Multi-page site",
+      "Custom design",
+      "SEO basics",
+      "Logo included",
+    ],
     highlight: true,
     mostPopular: true,
   },
   {
-    title: 'Premium',
-    price: '$2499+',
-    features: ['Full custom site', 'Advanced SEO', 'Branding kit', 'Maintenance plan'],
+    title: "Premium",
+    price: "$2499+",
+    features: [
+      "Full custom site",
+      "Advanced SEO",
+      "Branding kit",
+      "Maintenance plan",
+    ],
   },
 ];
 
 const seoTiers = [
   {
-    title: 'SEO Starter Pack',
-    price: '$450 (one-time)',
+    title: "SEO Starter Pack",
+    price: "$450 (one-time)",
     features: [
-      'Full site audit',
-      'On-page optimization',
-      'Keyword setup & tracking',
-      'Search console + sitemap setup',
+      "Full site audit",
+      "On-page optimization",
+      "Keyword setup & tracking",
+      "Search console + sitemap setup",
     ],
   },
   {
-    title: 'Monthly Growth',
-    price: '$600/mo',
+    title: "Monthly Growth",
+    price: "$600/mo",
     features: [
-      'Ongoing keyword tracking',
-      'Monthly content optimization',
-      'Backlink strategy & outreach',
-      'Performance reporting',
+      "Ongoing keyword tracking",
+      "Monthly content optimization",
+      "Backlink strategy & outreach",
+      "Performance reporting",
     ],
     highlight: true,
     mostPopular: true,
   },
   {
-    title: 'Local SEO Boost',
-    price: '$350/mo',
+    title: "Local SEO Boost",
+    price: "$350/mo",
     features: [
-      'Local keyword targeting',
-      'Google Business optimization',
-      'Review strategy',
-      'Citations & local directories',
+      "Local keyword targeting",
+      "Google Business optimization",
+      "Review strategy",
+      "Citations & local directories",
     ],
   },
 ];
 
 const brandingOptions = [
   {
-    title: 'Logo Design',
-    price: '$500',
-    features: ['3 concepts', '2 revisions', 'Final files included'],
+    title: "Logo Design",
+    price: "$500",
+    features: ["3 concepts", "2 revisions", "Final files included"],
   },
   {
-    title: 'Brand Kit',
-    price: '$950',
-    features: ['Logo + Colors + Fonts', 'Style guide', 'Social graphics'],
+    title: "Brand Kit",
+    price: "$950",
+    features: ["Logo + Colors + Fonts", "Style guide", "Social graphics"],
     mostPopular: true,
   },
 ];
 
 const maintenanceTiers = [
   {
-    title: 'Essential',
-    price: '$99/mo',
-    features: ['Security updates', 'Monthly backups', 'Basic edits'],
+    title: "Essential",
+    price: "$99/mo",
+    features: ["Security updates", "Monthly backups", "Basic edits"],
   },
   {
-    title: 'Pro',
-    price: '$199/mo',
-    features: ['All Essential', 'Priority edits', 'Content updates'],
+    title: "Pro",
+    price: "$199/mo",
+    features: ["All Essential", "Priority edits", "Content updates"],
     mostPopular: true,
   },
 ];
@@ -148,8 +162,8 @@ function PricingSection({ title, description, plans }) {
       <div
         className={`grid gap-8 ${
           plans.length === 2
-            ? 'md:grid-cols-2 justify-center'
-            : 'md:grid-cols-3'
+            ? "md:grid-cols-2 justify-center"
+            : "md:grid-cols-3"
         }`}
       >
         {plans.map((plan, i) => (
@@ -157,8 +171,8 @@ function PricingSection({ title, description, plans }) {
             key={plan.title}
             className={`relative border p-6 rounded-xl shadow-md hover:shadow-xl transition ${
               plan.highlight
-                ? 'border-primary bg-primary/5 '
-                : 'border-gray-200 '
+                ? "border-primary bg-primary/5 "
+                : "border-gray-200 "
             }`}
             custom={i}
             initial="hidden"
@@ -171,8 +185,12 @@ function PricingSection({ title, description, plans }) {
                 Most Popular
               </span>
             )}
-            <h3 className="text-xl font-bold text-primary mb-2">{plan.title}</h3>
-            <p className="text-3xl font-extrabold text-gray-900  mb-4">{plan.price}</p>
+            <h3 className="text-xl font-bold text-primary mb-2">
+              {plan.title}
+            </h3>
+            <p className="text-3xl font-extrabold text-gray-900  mb-4">
+              {plan.price}
+            </p>
             <ul className="text-gray-600  text-sm space-y-2 mb-4">
               {plan.features.map((f, idx) => (
                 <li key={idx}>✅ {f}</li>
@@ -195,18 +213,16 @@ export default function Services() {
   return (
     <>
       <Helmet>
-        <title>Services | Slate Web Studio</title>
+        <title>Our Services | Slate Web Studio</title>
         <meta
           name="description"
-          content="Explore Slate Web Studio's web design, SEO, branding, and maintenance services tailored to help your business grow online."
+          content="From web design and branding to SEO and maintenance, Slate Web Studio offers full-service packages to grow your online presence."
         />
-        <meta property="og:title" content="Services | Slate Web Studio" />
         <meta
-          property="og:description"
-          content="From web design to SEO, Slate Web Studio offers a full suite of digital solutions for modern businesses."
+          name="keywords"
+          content="custom web design, seo services for small businesses, brand identity packages florida, website maintenance and support, Vite and Tailwind websites, SEO site audits, florida SEO optimization"
         />
-        <meta property="og:image" content="https://slatewebstudio.com/og-image.jpg" />
-        <meta property="og:url" content="https://slatewebstudio.com/services" />
+        <link rel="canonical" href="https://slatewebstudio.com/services" />
       </Helmet>
 
       <section className="py-24 px-6 max-w-6xl mx-auto">
@@ -227,7 +243,8 @@ export default function Services() {
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          Everything you need to build, grow, and maintain your online presence — all in one place.
+          Everything you need to build, grow, and maintain your online presence
+          — all in one place.
         </motion.p>
 
         {/* Overview Cards */}

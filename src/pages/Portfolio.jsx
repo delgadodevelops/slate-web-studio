@@ -1,27 +1,27 @@
-import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
-import { FiExternalLink } from 'react-icons/fi';
-import foamexImg from '../assets/portfolio-foamex.png';
-import placeholderImg from '../assets/desktop-gray.png';
+import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
+import { FiExternalLink } from "react-icons/fi";
+import foamexImg from "../assets/portfolio-foamex.webp";
+import placeholderImg from "../assets/desktop-gray.webp";
 
 const projects = [
   {
-    title: 'Foamex Detailing',
-    description: 'A high-performance site for a car detailing brand.',
+    title: "Foamex Detailing",
+    description: "A high-performance site for a car detailing brand.",
     image: foamexImg,
-    liveUrl: 'https://foamexdetailing.com',
+    liveUrl: "https://foamexdetailing.com",
   },
   {
-    title: 'Sunset Realty',
-    description: 'Modern real estate website with MLS integration.',
+    title: "Sunset Realty",
+    description: "Modern real estate website with MLS integration.",
     image: placeholderImg,
-    liveUrl: '#',
+    liveUrl: "#",
   },
   {
-    title: 'Juice Lab',
-    description: 'A colorful e-comm site for a smoothie startup.',
+    title: "Juice Lab",
+    description: "A colorful e-comm site for a smoothie startup.",
     image: placeholderImg,
-    liveUrl: '#',
+    liveUrl: "#",
   },
 ];
 
@@ -32,15 +32,25 @@ export default function Portfolio() {
         <title>Portfolio | Slate Web Studio</title>
         <meta
           name="description"
-          content="Browse our latest web design and development work. See how we build fast, responsive, and SEO-ready websites for small businesses."
+          content="Explore our web design portfolio — custom-built websites for real businesses focused on speed, clarity, and results."
+        />
+        <meta
+          name="keywords"
+          content="custom-built website examples, florida business websites, web project showcase, modern web design portfolio"
         />
         <meta property="og:title" content="Portfolio | Slate Web Studio" />
         <meta
           property="og:description"
           content="Browse our recent projects — fast, SEO-optimized websites that help brands stand out online."
         />
-        <meta property="og:image" content="https://slatewebstudio.com/og-image.jpg" />
-        <meta property="og:url" content="https://slatewebstudio.com/portfolio" />
+        <meta
+          property="og:image"
+          content="https://slatewebstudio.com/og-image.jpg"
+        />
+        <meta
+          property="og:url"
+          content="https://slatewebstudio.com/portfolio"
+        />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Portfolio | Slate Web Studio" />
@@ -48,7 +58,10 @@ export default function Portfolio() {
           name="twitter:description"
           content="Clean and modern websites built with SEO in mind. See our work."
         />
-        <meta name="twitter:image" content="https://slatewebstudio.com/og-image.jpg" />
+        <meta
+          name="twitter:image"
+          content="https://slatewebstudio.com/og-image.jpg"
+        />
       </Helmet>
 
       <section className="bg-white py-24 px-6">
@@ -72,8 +85,8 @@ export default function Portfolio() {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            A curated selection of recent web design projects that showcase our clean aesthetic,
-            responsive builds, and SEO-first approach.
+            A curated selection of recent web design projects that showcase our
+            clean aesthetic, responsive builds, and SEO-first approach.
           </motion.p>
 
           {/* Grid Layout */}
@@ -98,6 +111,7 @@ export default function Portfolio() {
                   <img
                     src={project.image}
                     alt={project.title}
+                    loading="lazy"
                     className="w-full h-auto object-contain transition-transform duration-500 ease-in-out scale-95 group-hover:scale-100"
                   />
                 </motion.div>

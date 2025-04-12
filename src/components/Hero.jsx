@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import heroMockup from '../assets/mockup-laptop.jpg';
+import heroMockup from '../assets/mockup-laptop.webp';
 
 function Hero({ startAnimation }) {
   return (
@@ -57,6 +57,7 @@ function Hero({ startAnimation }) {
           <img
             src={heroMockup}
             alt="Website preview"
+            loading="lazy"
             className="max-w-[600px] w-full rounded-xl"
           />
         </motion.div>
