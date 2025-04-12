@@ -51,11 +51,11 @@ export default function Portfolio() {
         <meta name="twitter:image" content="https://slatewebstudio.com/og-image.jpg" />
       </Helmet>
 
-      <section className="bg-white dark:bg-slate-900 py-24 px-6">
+      <section className="bg-white py-24 px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Title */}
           <motion.h2
-            className="text-center text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-4 font-outfit"
+            className="text-center text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4 font-outfit"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -66,7 +66,7 @@ export default function Portfolio() {
 
           {/* Section Description */}
           <motion.p
-            className="text-center text-gray-600 dark:text-slate-400 max-w-2xl mx-auto mb-16 font-outfit text-base"
+            className="text-center text-gray-600  max-w-2xl mx-auto mb-16 font-outfit text-base"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -104,10 +104,10 @@ export default function Portfolio() {
 
                 {/* Text Content */}
                 <div className="mt-6">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 font-outfit">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900  mb-2 font-outfit">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-slate-400 mb-4 font-outfit leading-relaxed">
+                  <p className="text-sm text-gray-600  mb-4 font-outfit leading-relaxed">
                     {project.description}
                   </p>
 

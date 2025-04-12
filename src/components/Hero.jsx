@@ -3,7 +3,7 @@ import heroMockup from '../assets/mockup-laptop.jpg';
 
 function Hero({ startAnimation }) {
   return (
-    <section className="bg-white dark:bg-slate-900 py-24 px-6 overflow-hidden">
+    <section className="bg-white py-24 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         
         {/* Left: Text Content */}
@@ -13,7 +13,7 @@ function Hero({ startAnimation }) {
           animate={startAnimation ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, ease: 'easeOut' }}
         >
-          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-slate-200 sm:text-5xl md:text-6xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900  sm:text-5xl md:text-6xl">
             <span className="block mb-1">Custom Websites</span>
             <span className="block bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
               That Help You Get Found
@@ -33,7 +33,7 @@ function Hero({ startAnimation }) {
             <span className="flex items-center gap-1">📱 <span>Responsive</span></span>
           </div>
 
-          <p className="mt-6 max-w-md text-lg text-gray-600 dark:text-slate-400">
+          <p className="mt-6 max-w-md text-lg text-gray-600 ">
             Slate Web Studio builds clean, fast, and search-friendly websites that turn visitors into customers.
           </p>
 

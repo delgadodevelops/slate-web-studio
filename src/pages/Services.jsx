@@ -136,7 +136,7 @@ function PricingSection({ title, description, plans }) {
       </motion.h2>
       {description && (
         <motion.p
-          className="text-gray-600 dark:text-slate-400 max-w-xl mx-auto mb-10 font-outfit text-base"
+          className="text-gray-600  max-w-xl mx-auto mb-10 font-outfit text-base"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -157,8 +157,8 @@ function PricingSection({ title, description, plans }) {
             key={plan.title}
             className={`relative border p-6 rounded-xl shadow-md hover:shadow-xl transition ${
               plan.highlight
-                ? 'border-primary bg-primary/5 dark:bg-primary/10'
-                : 'border-gray-200 dark:border-slate-700'
+                ? 'border-primary bg-primary/5 '
+                : 'border-gray-200 '
             }`}
             custom={i}
             initial="hidden"
@@ -172,8 +172,8 @@ function PricingSection({ title, description, plans }) {
               </span>
             )}
             <h3 className="text-xl font-bold text-primary mb-2">{plan.title}</h3>
-            <p className="text-3xl font-extrabold text-gray-900 dark:text-white mb-4">{plan.price}</p>
-            <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-2 mb-4">
+            <p className="text-3xl font-extrabold text-gray-900  mb-4">{plan.price}</p>
+            <ul className="text-gray-600  text-sm space-y-2 mb-4">
               {plan.features.map((f, idx) => (
                 <li key={idx}>✅ {f}</li>
               ))}
@@ -211,7 +211,7 @@ export default function Services() {
 
       <section className="py-24 px-6 max-w-6xl mx-auto">
         <motion.h2
-          className="text-center text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-4 font-outfit"
+          className="text-center text-4xl sm:text-5xl font-extrabold text-gray-900  mb-4 font-outfit"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -221,7 +221,7 @@ export default function Services() {
         </motion.h2>
 
         <motion.p
-          className="text-center text-gray-600 dark:text-slate-400 max-w-2xl mx-auto mb-20 font-outfit text-base"
+          className="text-center text-gray-600  max-w-2xl mx-auto mb-20 font-outfit text-base"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -239,13 +239,13 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="p-6 rounded-xl border border-blue-100 dark:border-blue-900 bg-blue-50 dark:bg-blue-900/20 shadow-sm hover:shadow-md transition"
+              className="p-6 rounded-xl border border-blue-100  bg-blue-50  shadow-sm hover:shadow-md transition"
             >
               <div className="mb-4">{service.icon}</div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 font-outfit">
+              <h3 className="text-xl font-bold text-gray-900  mb-2 font-outfit">
                 {service.title}
               </h3>
-              <p className="text-sm text-gray-600 dark:text-slate-300 font-outfit">
+              <p className="text-sm text-gray-600  font-outfit">
                 {service.description}
               </p>
             </motion.div>

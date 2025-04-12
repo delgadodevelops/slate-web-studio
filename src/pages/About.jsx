@@ -21,7 +21,7 @@ export default function About() {
         <meta property="og:url" content="https://slatewebstudio.com/about" />
       </Helmet>
 
-      <section className="bg-white dark:bg-slate-900 text-gray-900 dark:text-white py-24 px-6">
+      <section className="bg-white  text-gray-900  py-24 px-6">
         <div className="max-w-6xl mx-auto">
           {/* Hero Section */}
           <motion.div
@@ -34,7 +34,7 @@ export default function About() {
             <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 font-outfit">
               Building Brands Through Bold Digital Design
             </h1>
-            <p className="text-lg text-gray-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Slate Web Studio is a Florida-based creative agency crafting custom websites, branding, and SEO solutions for modern businesses ready to stand out.
             </p>
           </motion.div>
@@ -77,7 +77,7 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.1 }}
                   viewport={{ once: true }}
-                  className="p-6 bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-800 rounded-xl"
+                  className="p-6 bg-blue-50  border-blue-100 rounded-xl"
                 >
                   <div className="text-primary text-2xl mb-3">{item.icon}</div>
                   <h3 className="font-semibold">{item.title}</h3>
@@ -109,11 +109,11 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   viewport={{ once: true }}
-                  className="p-6 rounded-xl bg-slate-100 dark:bg-slate-800 shadow-sm hover:shadow-md transition"
+                  className="p-6 rounded-xl bg-slate-100  shadow-sm hover:shadow-md transition"
                 >
                   <div className="text-primary text-xl font-bold mb-2">{step.step}</div>
                   <h4 className="font-semibold mb-1">{step.label}</h4>
-                  <p className="text-sm text-gray-600 dark:text-slate-300">{step.desc}</p>
+                  <p className="text-sm text-gray-600 ">{step.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -129,7 +129,7 @@ export default function About() {
           >
             <h2 className="text-2xl font-bold mb-8 text-center">Tools We Build With</h2>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 text-center text-sm text-gray-700 dark:text-slate-300">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 text-center text-sm text-gray-700 ">
               {[
                 { name: 'Vite', logo: '⚡' },
                 { name: 'Tailwind CSS', logo: '🎨' },
@@ -139,7 +139,7 @@ export default function About() {
               ].map((tool, i) => (
                 <motion.div
                   key={i}
-                  className="p-4 bg-gray-50 dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-md transition"
+                  className="p-4 bg-gray-50  rounded-xl shadow-sm hover:shadow-md transition"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
@@ -162,7 +162,7 @@ export default function About() {
           >
             <h2 className="text-2xl font-bold mb-8 text-center">Studio Stats</h2>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center text-gray-800 dark:text-white font-outfit">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center text-gray-800  font-outfit">
               {[
                 { stat: '20+', label: 'Websites Launched' },
                 { stat: '1 Week', label: 'Turnarounds Available' },
@@ -175,7 +175,7 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-blue-50 dark:bg-blue-900/10 p-6 rounded-xl shadow-sm hover:shadow-md transition"
+                  className="bg-blue-50  p-6 rounded-xl shadow-sm hover:shadow-md transition"
                 >
                   <div className="text-3xl font-bold text-primary mb-2">{item.stat}</div>
                   <div className="text-sm">{item.label}</div>
