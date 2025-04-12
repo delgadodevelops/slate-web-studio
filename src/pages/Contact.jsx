@@ -25,7 +25,6 @@ const Contact = () => {
       </Helmet>
 
       <div className="max-w-6xl mx-auto">
-        {/* Section Title */}
         <motion.h1
           className="text-4xl md:text-5xl font-bold text-center mb-4 text-custom-blue"
           initial="hidden"
@@ -46,22 +45,21 @@ const Contact = () => {
         </motion.p>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Form */}
+          {/* Contact Form with Getform */}
           <motion.form
+            action="https://getform.io/f/bmdkoeqa"
+            method="POST"
             className="bg-gray-50 p-8 rounded-3xl shadow-xl space-y-6"
             initial="hidden"
             animate="visible"
             custom={2}
             variants={fadeUp}
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Message sent! (This form can be connected to your backend or Formspree.)");
-            }}
           >
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
               <input
                 type="text"
+                name="name"
                 className="w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-custom-blue outline-none"
                 placeholder="Your name"
                 required
@@ -71,6 +69,7 @@ const Contact = () => {
               <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
               <input
                 type="email"
+                name="email"
                 className="w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-custom-blue outline-none"
                 placeholder="you@example.com"
                 required
@@ -79,6 +78,7 @@ const Contact = () => {
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
               <textarea
+                name="message"
                 rows="5"
                 className="w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-custom-blue outline-none"
                 placeholder="Tell us about your project..."
